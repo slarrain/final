@@ -30,3 +30,9 @@ Different members of the family like or dislike different types of food and not 
 
 
 _Any questions? slarrain@uchicago.edu_
+
+### Deployed to:
+## https://infinite-thicket-55360.herokuapp.com/
+
+Sign in with one the the usernames (otherwise you won't be able to see any attendance or scores).
+The password for each user is: _username123_
