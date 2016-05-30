@@ -18,7 +18,7 @@ class FoodsController < ApplicationController
     food.photo_url = params[:food][:photo_url]
     food.comments = params[:food][:comments]
     food.save
-    redirect_to "http://localhost:3000/menus"
+    redirect_to foods_url
   end
 
   def edit
@@ -31,13 +31,13 @@ class FoodsController < ApplicationController
     food.photo_url = params[:food][:photo_url]
     food.comments = params[:food][:comments]
     food.save
-    redirect_to "http://localhost:3000/menus"
+    redirect_to foods_url
   end
 
   def destroy
     food = Food.find_by(id: params[:id])
     food.delete
-    redirect_to "http://localhost:3000/menus"
+    redirect_to foods_url
   end
 
 end

@@ -10,25 +10,23 @@ Different members of the family like or dislike different types of food and not 
 
 ## The Project
 
-I want to build a website, where:
-- A set of Dished and Desserts can be entered into a Database
-- Each member of the family can register himself and value each meal, whether they like it or not.
-- Each member of the family can record which days will they be on the family vacation home.
-- Build up a Menu that will tell you if someone who's attending doesn't like something that will be served.
-- Suggest a meal that everyone will like [Not sure yet]
+- Users are family members
+- There are a set of food meals (with CRUD).
+- Each user must value or assign a score to each meal and a boolean value for not liking it.
+- Each user must register the dates when they will be attending.
+- By building up the Menu, you select a food for a given date. And it will automatically tell you, from the people registered for attending that day, a list of those who do not like that food and an average value score for the meal. **It does not take into account those who will not be attending.**
 
 ## The Models
 
 - User: the users table that will register each member of the family
 
-- Dish: the main dish that will be served for either a lunch or a dinner. We'll keep it simple, so just the name. Everyone will know what it is.
+- Food: food that will be served for either a lunch or a dinner. We'll keep it simple, so just the name, picture and comments.
 
-- Dessert: equivalent to the dish.
+- Attendance: each user registers when are they going to be attending. The is no reason to not serve some food because someone doesn't like it, when that someone won't be attending lunch or dinner.
 
-- Score_dish: a table that will have a user and a dish, and the score value that family member assigns to that dish.
+- Score: each user assigns a Score from 1 to 10, of how much the like or dislike that food. They also report a boolean values if the dislike that food.
 
-- Score_dessert: equivalent to the score_dish but for desserts.
+- Menu: the actual menu; For a date, we can select a food to be served, either for lunch or dinner and add some comments. The App will show a list of people that don't like that food (boolean dont_like = True) and an average score of the meal. But this 2 things will **ONLY be computed among the users who have registered attendance for that day**. So the same food can have different scores and dislikes lists for different dates. This is the crucial part of the App.
 
-- Menu_lunch: the actual menu, with a dish, a dessert and a date, for a lunch.
 
-- Menu_dinner: the actual menu, with a dish, a dessert and a date, for a dinner.
+_Any questions? slarrain@uchicago.edu_
