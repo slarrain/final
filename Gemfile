@@ -37,7 +37,7 @@ gem 'ez'
 gem 'bcrypt'
 
 #Per Heroku
-gem 'ruby', '2.2.4'
+# gem 'ruby', '2.2.4'
 
 
 group :development, :test do
