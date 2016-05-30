@@ -1,0 +1,18 @@
+<%= @food.errors.full_messages %>
+
+<%= form_for @food do |form| %>
+
+  <p><%= form.label :name %>
+  <br>
+  <%= form.text_field :name, size: 80, autofocus: true, required: true %></p>
+
+  <%= form.label :photo_url,  "Link to Image URL" %>
+  <br>
+  <%= form.text_field :photo_url, size: 80 %>
+
+  <p><%= form.label :comments %>
+  <br>
+  <%= form.text_area :comments, rows: 4, cols: 80 %></p>
+
+  <%= form.submit %>
+<% end %>

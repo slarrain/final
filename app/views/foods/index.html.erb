@@ -1,0 +1,8 @@
+<ul>
+<% @foods.each do |food| %>
+  <li><%= link_to food.name, "/foods/#{food.id}" %></li>
+<% end %>
+</ul>
+<small>
+  <%= link_to "Add New Food", new_food_path %>
+</small>

@@ -13,46 +13,43 @@
 
 ActiveRecord::Schema.define(version: 0) do
 
-  create_table "desserts", force: :cascade do |t|
-    t.text "name"
+  create_table "attendances", force: :cascade do |t|
+    t.integer "user_id"
+    t.date    "date"
   end
 
-  create_table "dishes", force: :cascade do |t|
+  add_index "attendances", ["user_id"], name: "index_attendances_on_user_id"
+
+  create_table "foods", force: :cascade do |t|
     t.text "name"
+    t.text "photo_url"
+    t.text "comments"
   end
 
   create_table "menus", force: :cascade do |t|
     t.date    "date"
-    t.integer "dish_id"
-    t.integer "dessert_id"
+    t.integer "food_id"
+    t.boolean "lunch",    default: false
+    t.text    "comments"
   end
 
-  add_index "menus", ["dessert_id"], name: "index_menus_on_dessert_id"
-  add_index "menus", ["dish_id"], name: "index_menus_on_dish_id"
+  add_index "menus", ["food_id"], name: "index_menus_on_food_id"
 
-  create_table "score_desserts", force: :cascade do |t|
-    t.integer "dessert_id"
+  create_table "scores", force: :cascade do |t|
+    t.integer "food_id"
     t.integer "user_id"
-    t.integer "value",      default: 0
+    t.integer "value"
+    t.boolean "dont_like", default: false
   end
 
-  add_index "score_desserts", ["dessert_id"], name: "index_score_desserts_on_dessert_id"
-  add_index "score_desserts", ["user_id"], name: "index_score_desserts_on_user_id"
-
-  create_table "score_dishes", force: :cascade do |t|
-    t.integer "dish_id"
-    t.integer "user_id"
-    t.integer "value",   default: 0
-  end
-
-  add_index "score_dishes", ["dish_id"], name: "index_score_dishes_on_dish_id"
-  add_index "score_dishes", ["user_id"], name: "index_score_dishes_on_user_id"
+  add_index "scores", ["food_id"], name: "index_scores_on_food_id"
+  add_index "scores", ["user_id"], name: "index_scores_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string  "name"
     t.integer "age"
     t.text    "email"
-    t.text    "password"
+    t.text    "password_digest"
   end
 
 end

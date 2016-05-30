@@ -1,0 +1,22 @@
+<%= @menu.errors.full_messages %>
+
+<%= form_for @menu do |form| %>
+
+  <p><%= form.label :date, "Date" %>
+  <br>
+  <%= form.date_select :date,  order: [:year, :month, :day], required: true%></p>
+
+  <p><%= form.label :food_id, "Food" %>
+  <br>
+  <%= form.collection_select :food_id, Food.all.order('name'), :id, :name %></p>
+
+  <%= form.label :lunch,  "Lunch?" %>
+  <br>
+  <%= form.check_box :lunch %>
+
+  <p><%= form.label :comments %>
+  <br>
+  <%= form.text_area :comments, rows: 4, cols: 80 %></p>
+
+  <%= form.submit %>
+<% end %>

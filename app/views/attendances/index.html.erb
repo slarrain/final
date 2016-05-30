@@ -1,0 +1,15 @@
+<%if @attendance %>
+    <ul>
+    <% @attendance.each do |att| %>
+    <% if att.user_id == session[:user_id] %>
+      <li>
+          <%= att.date %>
+           <%= link_to "Delete", attendance_path(att.id), :method => :delete %>
+      </li>
+      <% end %>
+    <% end %>
+    </ul>
+<%end%>
+<small>
+  <%= link_to "Add New Date Attendance", new_attendance_path%>
+</small>

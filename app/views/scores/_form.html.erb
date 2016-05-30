@@ -1,0 +1,17 @@
+<%= @score.errors.full_messages %>
+
+<%= form_for @score do |form| %>
+
+  <p><%= form.label :value %>
+      <%= form.text_area :value %></p>
+      <br>
+
+  <%= form.label :dont_like,  "I Don't like this Food" %>
+  <%= form.check_box :dont_like %>
+  <br>
+
+  <%= hidden_field_tag "food_id", params[:idfood] %>
+
+
+  <%= form.submit %>
+<% end %>

@@ -1,0 +1,21 @@
+
+
+<% if @score %>
+    <h2>
+        Score: <%= @score.value %>
+    </h2>
+    <h2>
+        Do you like this Food:
+        <% if @score.dont_like %>
+            NO
+        <%else%>
+            YES
+        <%end%>
+    </h2>
+    <small>
+      <%= link_to "Edit this Score", edit_score_path(@score.id) %>
+      <%= link_to "Delete This Score", score_path(@score.id), :method => :delete %>
+    </small>
+<% else %>
+    <%= link_to "Add Score", new_score_path(:idfood => @food.id) %>
+<% end %>

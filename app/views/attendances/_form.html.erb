@@ -1,0 +1,10 @@
+<%= @attendance.errors.full_messages %>
+
+<%= form_for @attendance do |form| %>
+
+    <p><%= form.label :date, "Date" %>
+    <br>
+    <%= form.date_select :date,  order: [:year, :month, :day], required: true%></p>
+
+  <%= form.submit %>
+<% end %>

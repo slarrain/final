@@ -1,0 +1,5 @@
+<ul>
+<% @foods.each do |food| %>
+  <li><%= link_to food.name, "/scores/#{food.id}" %></li>
+<% end %>
+</ul>

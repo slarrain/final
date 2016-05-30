@@ -2,33 +2,28 @@ User
     name: string
     age: integer
     email: text
-    password: text
+    password_digest: text
 
-Dish
+Food
     name: text
+    photo_url: text
+    comments: text
 
-Dessert
-    name: text
-
-Score_dish
-    dish_id: integer
+Score
+    food_id: integer
     user_id: integer
-    value: integer (0)
+    value: integer
+    dont_like: boolean
+    
+Menu
+    date: date
+    food_id: integer
+    lunch: boolean
+    comments: text
 
-Score_dessert
-    dessert_id: integer
+Attendance
     user_id: integer
-    value: integer (0)
-
-Menu_lunch
     date: date
-    dish_id: integer
-    dessert_id: integer
-
-Menu_dinner
-    date: date
-    dish_id: integer
-    dessert_id: integer
 
 
 

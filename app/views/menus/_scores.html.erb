@@ -1,0 +1,18 @@
+<% if @avg != 0 %>
+    <h2>
+        Food Average Score:
+        <%= @avg %>
+    </h2>
+<%end%>
+
+<h2>
+Don't like this food:
+    <% if @names.length != 0 %>
+    <% @names.each do |name| %>
+    <br />
+        <%= name %>
+    <%end%>
+    <%else %>
+    Nobody
+    <%end%>
+</h2>

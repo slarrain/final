@@ -1,0 +1,9 @@
+<h1>
+  <%= @food.name %>
+  <small>
+    <%= link_to "Edit This Food", edit_food_path(@food.id) %>
+    <%= link_to "Delete This Food", food_path(@food.id), :method => :delete %>
+  </small>
+</h1>
+
+<%= render 'details' %>

@@ -1,0 +1,12 @@
+<% path = menu ? menu_path(menu.id) : new_menu_path %>
+
+<div class="menu-box">
+  <% if menu %>
+  <%= link_to image_tag('menu_day.jpg'), path %>
+    <h3><%= link_to menu.date, menu_path(menu.id) %></h3>
+  <% else %>
+  <%= link_to image_tag('add_new.png'), path %>
+    <h3><%= link_to "Add New Menu", new_menu_path %></h3>
+    <!-- Ojo aqui -->
+  <% end %>
+</div>

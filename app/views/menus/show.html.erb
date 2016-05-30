@@ -1,0 +1,19 @@
+<h1>
+  <%= @menu.date %>
+  <small>
+    <%= link_to "Edit This Menu", edit_menu_path(@menu.id) %>
+    <%= link_to "Delete This Menu", menu_path(@menu.id), :method => :delete %>
+  </small>
+</h1>
+  <!-- <br /> -->
+<h2>
+  <% if @menu.lunch%>
+    Lunch
+  <% else %>
+    Dinner
+  <% end %>
+</h2>
+
+<%= render 'details' %>
+
+<%= render 'scores' %>
